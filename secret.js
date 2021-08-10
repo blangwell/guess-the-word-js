@@ -7,5 +7,18 @@ const secretWordList = [
 	"weed",
 	"hat",
 	"sabbath",
-	"turkey"
+	"turkey",
+	"underpants",
+	"cream",
+	"tobacco",
+	"fungus",
+	"teeth",
+	"grouchy",
+	"love",
+	"popcorn",
+	"cinema",
+	"pudding",
+	"broccoli",
+	"cabbage",
+	"guitar"
 ]
