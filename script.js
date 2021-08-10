@@ -58,7 +58,7 @@ function resetUserGuesses(secretWord) {
 function resetWordDisplay(word) {
 	let blankSpaces = "";
 	for (let i = 0; i < word.length; i++) {
-		blankSpaces += "_ "
+		blankSpaces += "_ ";
 	}
 	secretWordDisplay.innerText = blankSpaces;
 }
