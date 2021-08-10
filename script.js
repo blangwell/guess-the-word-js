@@ -8,15 +8,15 @@ let userGuesses = [];
 function startGame() {
 	gameOver = false;
 	secretWord = getSecretWord(secretWordList);
-	console.log(secretWord);
 	userGuesses = resetUserGuesses(secretWord);
 	resetWordDisplay(secretWord);
+	console.log(secretWord);
 }
 
 function endGame() {
 	let youWin = document.createElement("h3");
 	youWin.innerText = "YOU WIN!";
-	youWin.classList = "animate__animated animate__jello"
+	youWin.classList = "animate__animated animate__jello";
 	secretWordDisplay.appendChild(youWin);
 	gameOver = true;
 	playAgainButton.hidden = false;
@@ -27,10 +27,8 @@ function checkGuess(guess, secretWord) {
 	else {
 		let indices = [];
 		secretWord.forEach((char, idx) => {
-			if (char === guess) 
-				indices.push(idx);
+			if (char === guess) indices.push(idx);
 		});
-
 		indices.forEach(idx => userGuesses[idx] = guess);
 	}
 	console.log(userGuesses);
@@ -65,13 +63,12 @@ function resetWordDisplay(word) {
 	secretWordDisplay.innerText = blankSpaces;
 }
 
-async function updateWordDisplay(guesses) {
+function updateWordDisplay(guesses) {
 	secretWordDisplay.innerText = "";
-	await guesses.forEach(char => {
+	guesses.forEach(char => {
 		secretWordDisplay.innerText += char + "\xa0";
 	});
 }
-
 
 document.addEventListener("DOMContentLoaded", () => {
 	startGame();
@@ -79,8 +76,7 @@ document.addEventListener("DOMContentLoaded", () => {
 		if (!gameOver) {
 			checkGuess(e.key, secretWord);
 			updateWordDisplay(userGuesses);
-			if (checkForWin(userGuesses, secretWord)) 
-				endGame();
+			if (checkForWin(userGuesses, secretWord)) endGame();
 		}
 	});
 	playAgainButton.addEventListener("click", startGame);
